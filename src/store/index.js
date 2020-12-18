@@ -14,9 +14,5 @@ export default new Vuex.Store({
       Product,
       History,
       Category
-    },
-    state: {},
-    mutations: {},
-    actions: {},
-    getters: {}
+    }
 })

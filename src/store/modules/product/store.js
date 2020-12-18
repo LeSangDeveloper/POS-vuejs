@@ -5,7 +5,9 @@ import actions from './actions'
 
 export default {
     state: {
-        cart: [],
+        cart: [{
+            name: 'Sang'
+        }],
         product: [],
         productItem: [],
         page: 1,
@@ -14,7 +16,7 @@ export default {
         totalRows: null,
         invoice: ''      
     },
-    getters,
-    mutations,
-    actions
+    getters : getters,
+    mutations : mutations,
+    actions : actions
 }
