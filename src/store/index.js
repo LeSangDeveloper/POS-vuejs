@@ -9,10 +9,10 @@ import Category from './modules/category/store'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    modules: {
-      Auth,
-      Product,
-      History,
-      Category
-    }
+  modules: {
+    Auth,
+    Product,
+    History,
+    Category
+  }
 })

@@ -13,8 +13,18 @@
 import { mapGetters } from 'vuex'
 export default {
   name: 'Counter',
+  created() {
+    console.log(this.$store);
+  },
+  mounted() {
+      this.$nextTick(() => {
+      console.log(this.getCartLength);
+      })
+  },
   computed: {
-    ...mapGetters({ cartLength: 'getCartLength' })
+    ...mapGetters({
+      cartLength: 'getCartLength'
+    })
   }
 }
 </script>

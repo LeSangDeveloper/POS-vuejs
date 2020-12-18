@@ -5,9 +5,7 @@ import actions from './actions'
 
 export default {
     state: {
-        cart: [{
-            name: 'Sang'
-        }],
+        cart: [],
         product: [],
         productItem: [],
         page: 1,
