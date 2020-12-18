@@ -18,9 +18,6 @@ export default {
   components: {
     Header,
     Counter
-  },
-  computed: {
-    ...mapGetters({ cart: 'getCart' })
   }
 }
 </script>
