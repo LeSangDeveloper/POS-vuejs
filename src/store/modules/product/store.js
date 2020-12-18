@@ -1,0 +1,20 @@
+/* eslint-disable */
+import getters from './getters'
+import mutations from './mutations'
+import actions from './actions'
+
+export default {
+    state: {
+        cart: [],
+        product: [],
+        productItem: [],
+        page: 1,
+        limit: 8,
+        sort: 'product_id',
+        totalRows: null,
+        invoice: ''      
+    },
+    getters,
+    mutations,
+    actions
+}
