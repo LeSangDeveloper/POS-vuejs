@@ -4,7 +4,7 @@
     <div class="cart-overflow">
       <b-row v-for="(value, index) in cart" :key="index" class="cart-items">
         <b-col cols="3" md="4">
-          <b-img :src="url + '/' + value.product_image" fluid />
+          <b-img :src="value.image" fluid />
         </b-col>
         <b-col cols="5" md="5" style="padding: 0">
           <p class="name-cart"></p>

@@ -43,21 +43,24 @@
         class="product-list"
       >
         <!-- <b-img :src="url + '/' + value.product_image" fluid /> -->
-        <b-img :src="value.product_image" fluid />
-        <p>{{ value.product_name }}</p>
-        <!-- <p>
+        <b-img :src="value.image" fluid />
+        <p>{{ value.name }}</p>
+        <p>
           <strong>
-            Rp.
-            {{ value.product_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') }}
+            {{ formatPrice(value.price) }}
           </strong>
-        </p> -->
+        </p>
         <b-button
           class="add-cart"
           variant="info"
+          @click="addCart(value)"
+          v-if="!checkCart(value)"
         >Add to cart</b-button>
         <b-button
           class="remove-cart"
           variant="danger"
+          @click="removeCart(value)"
+          v-else
         >Remove from cart</b-button>
       </b-col>
     </b-row>
@@ -67,19 +70,36 @@
       ></b-pagination>
     </div>
   </b-col>
-</template> ``
+</template>
 <!-- eslint-disable -->
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'Inventory',
+    created() {
+    console.log(this.$store);
+  },
+  mounted() {
+      this.$nextTick(() => {
+      console.log(this.$store._mutations.addCart);
+      })
+  },
   data() {
     return {
       keyword: '',
       sortDrop: 'Sort',
       isSearch: false,
       currPage: 1
+    }
+  },
+  methods: {
+    ...mapMutations(['addCart', 'removeCart']),
+    formatPrice(value) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " VND"
+    },
+    checkCart(value) {
+      return this.cart.some((item) => item.id == value.id);
     }
   },
   computed: {

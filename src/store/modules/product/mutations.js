@@ -31,10 +31,10 @@ export default {
   },
   addCart(state, payload) {
     const setCart = {
-      product_id: payload.product_id,
-      product_name: payload.product_name,
-      product_image: payload.product_image,
-      product_price: payload.product_price,
+      id: payload.id,
+      name: payload.name,
+      image: payload.image,
+      price: payload.price,
       qty: 1
         }
     state.cart = [...state.cart, setCart]
