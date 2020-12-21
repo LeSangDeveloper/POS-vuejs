@@ -7,17 +7,25 @@
       </b-col>
       <Counter />
     </b-row>
+
+    <b-row>
+        <Inventory />
+    </b-row>
+
   </b-container>
 </template>
 <script>
 import { mapGetters } from 'vuex'
 import Header from '@/components/Header'
 import Counter from '@/components/Counter'
+import Inventory from '@/components/Inventory'
+
 export default {
   name: 'Home',
   components: {
     Header,
-    Counter
+    Counter,
+    Inventory
   },
   computed: {
     ...mapGetters({ cart: 'getCart' })
