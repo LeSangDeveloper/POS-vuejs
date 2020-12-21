@@ -14,6 +14,8 @@
         <Cart />
     </b-row>
 
+    <Sidebar />
+
   </b-container>
 </template>
 <script>
@@ -23,6 +25,7 @@ import Counter from '@/components/Counter'
 import Inventory from '@/components/Inventory'
 import CartEmpty from '@/components/CartEmpty'
 import Cart from '@/components/Cart'
+import Sidebar from '@/components/Sidebar'
 
 export default {
   name: 'Home',
@@ -31,7 +34,8 @@ export default {
     Counter,
     Inventory,
     CartEmpty,
-    Cart
+    Cart,
+    Sidebar
   },
   computed: {
     ...mapGetters({ cart: 'getCart' })
