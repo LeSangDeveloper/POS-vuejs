@@ -10,6 +10,8 @@
 
     <b-row>
         <Inventory />
+        <CartEmpty />
+        <Cart />
     </b-row>
 
   </b-container>
@@ -19,13 +21,17 @@ import { mapGetters } from 'vuex'
 import Header from '@/components/Header'
 import Counter from '@/components/Counter'
 import Inventory from '@/components/Inventory'
+import CartEmpty from '@/components/CartEmpty'
+import Cart from '@/components/Cart'
 
 export default {
   name: 'Home',
   components: {
     Header,
     Counter,
-    Inventory
+    Inventory,
+    CartEmpty,
+    Cart
   },
   computed: {
     ...mapGetters({ cart: 'getCart' })
