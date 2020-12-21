@@ -36,21 +36,40 @@
         class="checkout-btn"
         variant="info"
         style="background: #57cad5;"
+        @click="checkout(cart)"
       >Checkout</b-button>
       <b-button
         class="cancel-btn"
         variant="danger"
         @click="cancelCart()"
       >Cancel</b-button>
+      <b-card v-if="qrCodeData.link.length > 0">
+        <qrcode :text="qrCodeData.link"> {{qrCodeData.link}} </qrcode>
+      </b-card>
     </b-row>
   </b-col>
 </template>
 <!-- eslint-disable -->
 <script>
 import { mapActions, mapMutations, mapGetters } from 'vuex'
+import VueQRCodeComponent from 'vue-qrcode-component'
+
+const uuidv1 = require('uuid/v1')
+const crypto = require('crypto');
 
 export default {
+  components: {
+    qrcode: VueQRCodeComponent,
+  },
   name: 'Cart',
+  data() {
+    return {
+      qrCodeData: {
+        amount: 0,
+        link: ''
+      }
+    }
+  },
   methods: {
     ...mapMutations(['removeCart' ,'minQty', 'plusQty', 'cancelCart']),
     onMin(data) {
@@ -70,6 +89,24 @@ export default {
       }
       return total
     },
+    checkout(data) {
+      console.log('Create New Dynamic QR Code...');
+
+      const amount = this.qrCodeData.amount;
+      const billId = uuidv1();
+
+      const rawSignature = `abc`;
+      console.log('--------------------RAW SIGNATURE----------------');
+      console.log(rawSignature);
+      const signature = crypto.createHmac('sha256', 'abc')
+        .update(rawSignature)
+        .digest('hex');
+      console.log('--------------------SIGNATURE----------------');
+      console.log(signature);
+
+      this.qrCodeData.link = `https://abc.com.vn`;
+      console.log(`QR Code Data: ${this.qrCodeData.link}`);
+    }
   },
   computed: {
     ...mapGetters({ cart: 'getCart' })
