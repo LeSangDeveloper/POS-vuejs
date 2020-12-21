@@ -9,15 +9,15 @@
         <b-col cols="5" md="5" style="padding: 0">
           <p class="name-cart"></p>
           <b-input-group>
-            <b-button class="plus-minus" variant="success" >-</b-button>
+            <b-button class="plus-minus" variant="success" @click="onMin(value)">-</b-button>
             <input type="text" v-model="value.qty" class="qty" />
-            <b-button class="plus-minus" variant="success" >+</b-button>
+            <b-button class="plus-minus" variant="success" @click="plusQty(value)">+</b-button>
           </b-input-group>
         </b-col>
         <b-col cols="4" md="3" style="padding: 0" align-self="end">
           <p
             class="price-cart"
-          >Rp. </p>
+          >{{formatPrice(value.price * value.qty)}}</p>
         </b-col>
       </b-row>
     </div>
@@ -30,7 +30,7 @@
         </p>
       </b-col>
       <b-col cols="6" style="text-align: end;">
-        <p>Rp. *</p>
+        <p>{{ formatPrice(countTotal()) }} *</p>
       </b-col>
       <b-button
         class="checkout-btn"
@@ -40,6 +40,7 @@
       <b-button
         class="cancel-btn"
         variant="danger"
+        @click="cancelCart()"
       >Cancel</b-button>
     </b-row>
   </b-col>
@@ -50,6 +51,26 @@ import { mapActions, mapMutations, mapGetters } from 'vuex'
 
 export default {
   name: 'Cart',
+  methods: {
+    ...mapMutations(['removeCart' ,'minQty', 'plusQty', 'cancelCart']),
+    onMin(data) {
+      if (data.qty === 1) {
+        this.removeCart(data)
+      } else {
+        this.minQty(data)
+      }
+    },
+    formatPrice(value) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " VND"
+      },
+    countTotal() {
+      let total = 0
+      for (let i = 0; i < this.cart.length; i++) {
+        total += this.cart[i].price * this.cart[i].qty
+      }
+      return total
+    },
+  },
   computed: {
     ...mapGetters({ cart: 'getCart' })
   }
