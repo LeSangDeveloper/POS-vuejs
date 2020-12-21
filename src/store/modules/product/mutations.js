@@ -36,12 +36,12 @@ export default {
       image: payload.image,
       price: payload.price,
       qty: 1
-        }
+      }
     state.cart = [...state.cart, setCart]
   },
   removeCart(state, payload) {
     state.cart.splice(
-      state.cart.findIndex(item => item.product_id === payload.product_id),
+      state.cart.findIndex(item => item.id === payload.id),
       1
     )
   },
@@ -53,13 +53,13 @@ export default {
   },
   minQty(state, payload) {
     const findCart = state.cart.find(
-      value => value.product_id === payload.product_id
+      value => value.id === payload.id
     )
     findCart.qty -= 1
   },
   plusQty(state, payload) {
     const findCart = state.cart.find(
-      value => value.product_id === payload.product_id
+      value => value.id === payload.id
     )
     findCart.qty += 1
   },
