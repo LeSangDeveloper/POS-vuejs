@@ -1,6 +1,7 @@
 /* eslint-disable */
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createMutationsSharer from "vuex-shared-mutations"
 import Auth from './modules/auth/store'
 import Product from './modules/product/store'
 import History from './modules/history/store'
@@ -16,5 +17,6 @@ export default new Vuex.Store({
     History,
     Category,
     Partner
-  }
+  },
+  plugins: [createMutationsSharer({ predicate: ['addCart'] })]
 })

@@ -64,6 +64,7 @@ export default {
   name: 'Cart',
   data() {
     return {
+      domain: 'https://test-payment.momo.vn',
       qrCodeData: {
         amount: 0,
         link: ''
@@ -87,29 +88,31 @@ export default {
       for (let i = 0; i < this.cart.length; i++) {
         total += this.cart[i].price * this.cart[i].qty
       }
+      this.qrCodeData.amount = total
       return total
     },
     checkout(data) {
       console.log('Create New Dynamic QR Code...');
 
+      const storeSlug = this.partner.storeSlug;
       const amount = this.qrCodeData.amount;
       const billId = uuidv1();
 
-      const rawSignature = `abc`;
+      const rawSignature = `storeSlug=${storeSlug}&amount=${amount}&billId=${billId}`;
       console.log('--------------------RAW SIGNATURE----------------');
       console.log(rawSignature);
-      const signature = crypto.createHmac('sha256', 'abc')
+      const signature = crypto.createHmac('sha256', this.partner.secretKey)
         .update(rawSignature)
         .digest('hex');
       console.log('--------------------SIGNATURE----------------');
       console.log(signature);
 
-      this.qrCodeData.link = `https://abc.com.vn`;
+      this.qrCodeData.link = `${this.domain}/pay/store/${storeSlug}?a=${amount}&b=${billId}&s=${signature}`;
       console.log(`QR Code Data: ${this.qrCodeData.link}`);
     }
   },
   computed: {
-    ...mapGetters({ cart: 'getCart' })
+    ...mapGetters({ cart: 'getCart', partner: 'getPartnerInfo' })
   }
 }
 </script>

@@ -15,7 +15,7 @@ Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
-/* eslint-disable no-new */
+/* eslint-disable*/
 new Vue({
   router,
   store,

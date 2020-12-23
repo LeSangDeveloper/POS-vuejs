@@ -18,6 +18,7 @@
 
   </b-container>
 </template>
+<!-- eslint-disable -->
 <script>
 import { mapGetters } from 'vuex'
 import Header from '@/components/Header'
@@ -36,6 +37,12 @@ export default {
     CartEmpty,
     Cart,
     Sidebar
+  },
+  created: function () {
+
+  },
+  updated: function () {
+    console.log(Student)
   },
   computed: {
     ...mapGetters({ cart: 'getCart' })

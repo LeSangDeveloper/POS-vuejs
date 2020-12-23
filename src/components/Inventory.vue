@@ -77,14 +77,6 @@ import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'Inventory',
-    created() {
-    console.log(this.$store);
-  },
-  mounted() {
-      this.$nextTick(() => {
-      console.log(this.$store._mutations.addCart);
-      })
-  },
   data() {
     return {
       keyword: '',

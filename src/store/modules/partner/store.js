@@ -4,13 +4,14 @@ import getters from './getters'
 export default {
     state: {
       partnerInfo: {
-        partnerCode: 'MOMOLRJZ20181206',
-        storeId: '979797',
-        storeSlug: 'MOMOLRJZ20181206-113',
+        partnerCode: 'MOMO2OO520180407',
+        storeId: '9988776655',
+        storeSlug: 'MOMO2OO520180407-9988776655',
         accessKey: 'mTCKt9W3eU1m39TW',
-        serectKey: 'KqBEecvaJf1nULnhPF5htpG3AMtDIOlD',
-        publicKey: '-----BEGIN PUBLIC KEY-----MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlsL+G4UyFO0UQsQ4cAXuGYcn38d67PluKmeJqS2RcAqnNUFJjQieI5DSCyHVgAmPpUfDZ3CiSw+5NCfnjgChd/p4fq3bnGqSIw2JP78UROQDJYqfAc+WLvT29IgCH4O+P9+lOLUj2EWf8aqHxBwC1YPxtxK+8M+LKdVMAvZd3lXE3MBg9wTDYEcCNODXkNma/SfIKJCvmVWdKeKXd6IwW7yA0oTjdguAeqP8+O8jLjxJH57otRh63iX945vqAX2YAm9qzVoiDcWpv+UubRmbZ9l0moQwkdsDyCtCYPUtcW6kkdxuhlq8rg8RAVcinsz/843CBYHtqaUaAFQU1TO5EXiXT87zx/Oj2Bf4OC+iAJL/UQ4ASeL1vMoOfDSpSE8EnqKPyP+rM/H7oUaJrIin8KkrxmDLGQWKhNcTFO6UNPv3Hh13tEBv0GRy2vktL8+CWhrYHouXF2XwpS8uR/gH/Vl+5HT/HsTv/13gjSoGBQcdfyck9ZyHh5oBrQTds52C2vabCqWCEafRMbpj7lSrDWS2Df+XznR/hGkgewSdSZ/M0VK/DLadJ3x1Yhblv1HVw3jA3xzY1/zlNOZReLuvW6/kdRwJV/Zj5bd9eLJnz9jDPUcB0hAO+JuJYfTVuhZG9Beo1JbQ9+cFx+92ELn/yHDMod6rfrfBjikU9Gkxor0CAwEAAQ==-----END PUBLIC KEY-----',
-      }
+        secretKey: '3ZMD738Aw93v0tszHjLObJdmITBira26',
+        publicKey: '-----BEGIN PUBLIC KEY-----MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlBhC6/N5k7pLmxYYhdm1ad7bJME+2IRu4kaZLIlIPdCr/b1lIvNm89VzYlY9t74+/MVWq856QMpPi/eKczLx5/eyvYPmaDgByAoF5gPb8K3kCJD9I+Hg/hc9BkclNKZIu8RfQdTFJMUJGd283fDn+yssy2z222I/O8LO5dQDixeQtaW9Id4PCpCvYrPKhdVybcqs26PfzTSDdW1P9DzcbmL2LUjlGrQmXMg8/Q+DWlgSBESnqep8DcKjxsLviwnwU3V7m+6h0OSf4coxgc1g3KpjwU2GoFBTQgy8tfqg/KKlLSy8r///TFA/6KZGsmE3JR/S8vLkqvu34CStxNq0a1ywOyaOHRG+W78Plw0WT9PM4vX0VKdIA+DSEWDb3mBAYU6xEUb/Vbq4GVcrqkIWY8vFQT5qlgszxAMLlz3dkBpYgtlp14/FFQxdvnbTYz0tvdrQi21pXURysmFWcuT9ZMHX9biKLTaDbhS0Zbpuwg9ATlY3BNGcWxQVT51Hllmi2d7jVh3nZ0+We9GhjZtv8sly2cItaHgdsKgyfDEHDW3C+yei27id4kciHrulGShZ44Je7fBEZYTPe51Ul2sGSSyUPDJNUkBii/min3+47s+8OT5ePty8yDX/y03XvTRS5efNrpENLYT5XJl6YNC5ZBK/sqTz141+EiLlyUap/a8CAwEAAQ==-----END PUBLIC KEY-----',
+      },
+      temp: 0
     },
     getters : getters,
 }
